@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070f" />
+      <stop offset="50%" stop-color="#0a0f24" />
+      <stop offset="100%" stop-color="#05070f" />
+    </linearGradient>
+
+    <!-- Bio-Organic Gradient (Neurons/Organoid) -->
+    <linearGradient id="bioGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2a85" />
+      <stop offset="100%" stop-color="#ff7300" />
+    </linearGradient>
+
+    <!-- Tech/Silicon Gradient (Interfacing/Silicon) -->
+    <linearGradient id="techGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <!-- Connection Bridge Gradient -->
+    <linearGradient id="bridgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2a85" />
+      <stop offset="50%" stop-color="#7f00ff" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-heavy" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* CSS Animations for Dynamic Effects */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.1); }
+    }
+
+    @keyframes neuralSignal {
+      0% { stroke-dashoffset: 1000; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-10px) translateX(5px); }
+    }
+
+    @keyframes bioPulse {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(255, 42, 133, 0.4)); }
+      50% { filter: drop-shadow(0 0 20px rgba(255, 42, 133, 0.8)); }
+    }
+
+    @keyframes scaleNode {
+      0%, 100% { r: 5px; }
+      50% { r: 8px; }
+    }
+
+    /* Classes */
+    .bg { fill: url(#bgGrad); }
+    
+    .grid-lines {
+      stroke: #1e293b;
+      stroke-width: 1;
+      opacity: 0.15;
+    }
+
+    .neuron-node {
+      fill: #ff2a85;
+      filter: url(#glow);
+      animation: scaleNode 3s infinite ease-in-out;
+    }
+
+    .neuron-node-2 {
+      fill: #ff7300;
+      filter: url(#glow);
+      animation: scaleNode 4s infinite ease-in-out;
+    }
+
+    .silicon-node {
+      fill: #00f2fe;
+      filter: url(#glow);
+      animation: scaleNode 2.5s infinite ease-in-out;
+    }
+
+    .axon-connection {
+      stroke: url(#bridgeGrad);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      filter: url(#glow);
+      stroke-dasharray: 12, 12;
+      animation: neuralSignal 25s linear infinite;
+    }
+
+    .neural-path-bg {
+      stroke: #334155;
+      stroke-width: 1;
+      fill: none;
+      opacity: 0.3;
+    }
+
+    .bio-organoid {
+      animation: bioPulse 5s infinite ease-in-out;
+    }
+
+    .text-title {
+      font-family: 'Outfit', 'Inter', 'Segoe UI', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      fill: #ffffff;
+      letter-spacing: 2px;
+    }
+
+    .text-subtitle {
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      fill: #94a3b8;
+      letter-spacing: 4px;
+    }
+
+    .pulse-circle {
+      animation: pulseGlow 4s infinite ease-in-out;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="400" class="bg" />
+
+  <!-- Background Grid -->
+  <g class="grid-lines">
+    <path d="M 0,50 L 1200,50 M 0,100 L 1200,100 M 0,150 L 1200,150 M 0,200 L 1200,200 M 0,250 L 1200,250 M 0,300 L 1200,300 M 0,350 L 1200,350" />
+    <path d="M 100,0 L 100,400 M 200,0 L 200,400 M 300,0 L 300,400 M 400,0 L 400,400 M 500,0 L 500,400 M 600,0 L 600,400 M 700,0 L 700,400 M 800,0 L 800,400 M 900,0 L 900,400 M 1000,0 L 1000,400 M 1100,0 L 1100,400" />
+  </g>
+
+  <!-- Glowing background ambient spots -->
+  <circle cx="200" cy="200" r="150" fill="#ff2a85" opacity="0.08" filter="url(#glow-heavy)" class="pulse-circle" />
+  <circle cx="1000" cy="200" r="180" fill="#00f2fe" opacity="0.08" filter="url(#glow-heavy)" class="pulse-circle" style="animation-delay: 2s;" />
+
+  <!-- LEFT SIDE: Biological Neural Network (The "Wetware") -->
+  <g class="bio-organoid">
+    <!-- Neuron body/organoid representation -->
+    <circle cx="250" cy="200" r="45" fill="none" stroke="url(#bioGrad)" stroke-width="4" filter="url(#glow)" opacity="0.8" />
+    <circle cx="250" cy="200" r="25" fill="url(#bioGrad)" opacity="0.6" filter="url(#glow)" />
+    
+    <!-- Dendrites / Branching structures -->
+    <path class="neural-path-bg" d="M 250,200 L 170,140 M 250,200 L 150,230 M 250,200 L 210,280 M 250,200 L 310,130 M 250,200 L 320,260" />
+    
+    <!-- Outer Neural Nodes -->
+    <circle cx="170" cy="140" r="6" class="neuron-node" />
+    <circle cx="150" cy="230" r="5" class="neuron-node-2" style="animation-delay: 1s;" />
+    <circle cx="210" cy="280" r="7" class="neuron-node" style="animation-delay: 1.5s;" />
+    <circle cx="310" cy="130" r="5" class="neuron-node-2" style="animation-delay: 0.5s;" />
+    <circle cx="320" cy="260" r="6" class="neuron-node" style="animation-delay: 2s;" />
+
+    <!-- Extra smaller branches -->
+    <path class="neural-path-bg" d="M 170,140 L 120,120 M 170,140 L 190,90 M 150,230 L 90,240 M 210,280 L 180,340 M 320,260 L 380,300" />
+    <circle cx="120" cy="120" r="3" fill="#ff2a85" />
+    <circle cx="190" cy="90" r="3" fill="#ff7300" />
+    <circle cx="90" cy="240" r="3" fill="#ff2a85" />
+    <circle cx="180" cy="340" r="4" fill="#ff7300" />
+    <circle cx="380" cy="300" r="3" fill="#ff2a85" />
+  </g>
+
+  <!-- RIGHT SIDE: Silicon/Computational Microelectrode Array (MEA) Grid -->
+  <g>
+    <!-- MEA substrate border -->
+    <rect x="850" y="90" width="220" height="220" rx="15" fill="none" stroke="url(#techGrad)" stroke-width="3" filter="url(#glow)" opacity="0.8" />
+    
+    <!-- MEA internal tracks -->
+    <line x1="960" y1="90" x2="960" y2="310" stroke="#1e293b" stroke-dasharray="5,5" />
+    <line x1="850" y1="200" x2="1070" y2="200" stroke="#1e293b" stroke-dasharray="5,5" />
+    
+    <!-- Electrode Grid Points -->
+    <!-- Row 1 -->
+    <circle cx="890" cy="130" r="4" class="silicon-node" />
+    <circle cx="960" cy="130" r="4" class="silicon-node" style="animation-delay: 0.4s;" />
+    <circle cx="1030" cy="130" r="4" class="silicon-node" style="animation-delay: 0.8s;" />
+    <!-- Row 2 -->
+    <circle cx="890" cy="200" r="4" class="silicon-node" style="animation-delay: 1.2s;" />
+    <circle cx="960" cy="200" r="6" class="silicon-node" style="animation-delay: 0.2s; fill: #00f2fe;" />
+    <circle cx="1030" cy="200" r="4" class="silicon-node" style="animation-delay: 1.4s;" />
+    <!-- Row 3 -->
+    <circle cx="890" cy="270" r="4" class="silicon-node" style="animation-delay: 0.6s;" />
+    <circle cx="960" cy="270" r="4" class="silicon-node" style="animation-delay: 1s;" />
+    <circle cx="1030" cy="270" r="4" class="silicon-node" style="animation-delay: 1.6s;" />
+
+    <!-- Silicon Circuit Lines -->
+    <path class="neural-path-bg" d="M 890,130 L 810,130 M 890,200 L 780,200 M 890,270 L 810,270 M 1030,130 L 1110,130 M 1030,200 L 1110,200 M 1030,270 L 1110,270" />
+  </g>
+
+  <!-- INTERFACE: The Closed-Loop Bridging Synapses (Wetware &lt;-&gt; Hardware) -->
+  <g>
+    <!-- Bridge Axon 1: Stimulation (Hardware -> Neurons) -->
+    <path class="axon-connection" d="M 960,200 C 800,100 500,100 250,200" style="animation-delay: 0s;" />
+    
+    <!-- Bridge Axon 2: Recording (Neurons -> Hardware) -->
+    <path class="axon-connection" d="M 250,200 C 500,300 800,300 960,200" style="animation-delay: -12.5s; stroke: url(#bridgeGrad);" />
+  </g>
+
+  <!-- Central Title Text (Overlaid cleanly with high contrast) -->
+  <g transform="translate(600, 200)">
+    <!-- Semi-transparent card behind text for readability -->
+    <rect x="-260" y="-70" width="520" height="140" rx="12" fill="#030712" fill-opacity="0.8" stroke="#1f2937" stroke-width="1.5" />
+    
+    <text class="text-title" x="0" y="-10" text-anchor="middle">WETWARE COMPUTING</text>
+    <text class="text-subtitle" x="0" y="30" text-anchor="middle">INTERVIEW SPECIALIST</text>
+  </g>
+
+  <!-- Small floating biological & digital particles -->
+  <circle cx="150" cy="80" r="2.5" fill="#ff2a85" opacity="0.6" style="animation: floatParticle 6s infinite ease-in-out;" />
+  <circle cx="350" cy="330" r="3.5" fill="#ff7300" opacity="0.5" style="animation: floatParticle 8s infinite ease-in-out; animation-delay: 1s;" />
+  <circle cx="820" cy="80" r="2.5" fill="#00f2fe" opacity="0.6" style="animation: floatParticle 5s infinite ease-in-out; animation-delay: 2s;" />
+  <circle cx="1050" cy="350" r="3" fill="#4facfe" opacity="0.5" style="animation: floatParticle 7s infinite ease-in-out; animation-delay: 3s;" />
+
+</svg>
