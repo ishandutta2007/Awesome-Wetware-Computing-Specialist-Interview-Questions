@@ -6,7 +6,14 @@
   <p align="center">
     <strong>A curated, community-driven collection of interview questions, model answers, frameworks, and explanations for roles in Biological Computing & Organoid Intelligence (OI).</strong>
   </p>
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a><a href="https://github.com/ishandutta2007/Awesome-Wetware-Computing-Specialist-Interview-Questions/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Wetware-Computing-Specialist-Interview-Questions?style=flat-square" alt="Stars"/></a><a href="https://github.com/ishandutta2007/Awesome-Wetware-Computing-Specialist-Interview-Questions/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Wetware-Computing-Specialist-Interview-Questions?style=flat-square" alt="License"/></a>
 </div>
+
+---
+
+## 🎯 Overview & SEO Keywords
+* **Target Roles**: Wetware Computing Specialist, Organoid Intelligence (OI) Researcher, Neural Interface Engineer, Computational Neuroengineer, Bioengineer, Bio-silico Systems Scientist.
+* **Core Topics**: Cultured Neurons, Brain-on-a-Chip, Microelectrode Arrays (MEAs), Synaptic Plasticity, Spike Sorting, Closed-loop Stimulation, Bioethics, and Biological Neural Network Architectures.
 
 ---
 
