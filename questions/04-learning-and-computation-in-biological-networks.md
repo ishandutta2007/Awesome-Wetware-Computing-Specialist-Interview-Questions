@@ -1,0 +1,52 @@
+# 4. Learning & Computation in Biological Networks
+
+How biological plasticity mechanisms are exploited (and studied) to produce activity changes that researchers interpret as a form of learning in cultured neural systems.
+
+---
+
+### Q: What is synaptic plasticity, and how does it relate to the theoretical basis for expecting a cultured neural network to be capable of any form of learning-like behavioral change? 🟢
+
+**Answer:**
+Synaptic plasticity refers to the capacity of synapses (the connections between neurons) to change in strength over time, based on patterns of activity — a foundational, extensively studied biological mechanism believed to underlie learning and memory formation in intact biological nervous systems. Common well-studied forms include activity-dependent strengthening or weakening of specific synaptic connections based on the relative timing or correlation of pre- and post-synaptic neural activity (broadly related to Hebbian learning principles, often informally summarized as "neurons that fire together, wire together").
+
+This provides the basic theoretical/mechanistic basis for expecting cultured neural networks to exhibit some form of learning-like activity change in response to structured, patterned stimulation (per the closed-loop paradigm discussed in section 3): since synaptic plasticity is an intrinsic biological property of neurons themselves (not something requiring an intact, whole-brain context to occur — plasticity-related mechanisms have been extensively studied and demonstrated in reduced, in vitro cultured neuron preparations for decades, well before recent wetware computing research specifically), a researcher structuring a closed-loop stimulation protocol with consistent, activity-contingent feedback is providing exactly the kind of patterned activity input that plasticity mechanisms are mechanistically expected to respond to, motivating the hypothesis (which specific experiments then aim to test) that the network's connectivity and resulting activity patterns might change in a way correlated with this structured feedback over repeated exposure.
+
+**Follow-ups:**
+- Why does having a well-established, independently-studied mechanistic basis for plasticity (from decades of prior neuroscience research) matter for how a wetware computing researcher should interpret an observed activity change in a closed-loop experiment, compared to if plasticity's biological basis were entirely unknown or unestablished?
+
+---
+
+### Q: What is the "free energy principle" (or related predictive-processing frameworks), and why has it been invoked by some researchers as a theoretical framework for understanding how a cultured neural network might exhibit self-organizing, adaptive behavior in a closed-loop stimulation paradigm? 🔴
+
+**Answer:**
+The free energy principle is a theoretical framework (originating in computational neuroscience and related fields) proposing that biological neural systems generally operate to minimize a quantity related to "surprise" or prediction error between the system's internal model/expectations and the sensory input it actually receives — under this framework, a biological system's activity and plasticity changes can be understood as the system implicitly working to build better internal predictive models and/or to act on its environment in ways that reduce future prediction error/surprise, rather than requiring an externally-imposed, explicit reward or training signal in the way many conventional artificial learning algorithms use.
+
+This framework has been invoked in the wetware computing context (including, notably, in some published discussion of closed-loop cultured-neuron experiments) as a candidate theoretical account for why a cultured network might exhibit activity changes correlated with structured, closed-loop stimulation feedback, even without any activity resembling a conventional, explicit reward signal being delivered — the framework proposes that the network is implicitly minimizing prediction error/surprise given the specific statistical structure of the stimulation it receives, rather than "learning to play the game" in a sense directly analogous to how a reinforcement-learning-trained artificial agent learns. It's important for a rigorous researcher to treat this as one candidate theoretical framework actively being explored and debated within the field, not a settled, universally-accepted explanation — the free energy principle itself remains an active area of theoretical and empirical investigation and debate within computational neuroscience more broadly, and its specific application to interpreting wetware computing experimental results should be presented with appropriate epistemic caution rather than asserted as established fact.
+
+**Follow-ups:**
+- How would you design an experiment to help distinguish between a free-energy/predictive-processing account of an observed cultured-network activity change versus a simpler, more conventional reinforcement-learning-like account, given that both frameworks might predict superficially similar closed-loop behavioral changes?
+
+---
+
+### Q: How would you rigorously distinguish "genuine learning" from other, non-learning explanations for an observed change in a cultured neural network's activity or task-relevant behavior over the course of a closed-loop experiment? 🔴
+
+**Answer:**
+- **Include appropriately designed control conditions**, such as comparing the closed-loop, activity-contingent stimulation condition against a control condition receiving statistically matched but non-contingent (e.g., randomly-timed, not actually responsive to the network's own activity or task state) stimulation — if the network shows a similar activity change under both conditions, this suggests the observed change reflects a general response to stimulation exposure itself (or simple, non-learning adaptation/plasticity unrelated to the specific closed-loop contingency) rather than genuine learning specifically driven by the task-contingent feedback structure.
+- **Test for retention and generalization**, since genuine learning is generally expected to show some persistence beyond the immediate stimulation period (rather than reverting immediately once stimulation stops) and, depending on the specific claim being tested, might be expected to generalize appropriately to a related but not identical task variant — while a purely transient, stimulation-driven activity change without persistence or appropriate generalization would be less consistent with a genuine learning interpretation.
+- **Rule out simpler, non-learning explanations for the observed effect** — e.g., general activity drift or habituation over the course of a long experimental session (unrelated to the specific closed-loop task structure), or systematic changes in the electrode-tissue interface's recording/stimulation characteristics over time (a genuine technical confound distinct from any change in the neural tissue's actual computational behavior) — before attributing an observed change specifically to task-related learning.
+- **Maintain appropriate epistemic humility and precise, carefully-scoped claims** in how results are reported and communicated — given the genuine difficulty of definitively establishing "learning" (a concept with contested and sometimes ambiguous criteria even in more established neuroscience contexts) in this relatively young experimental paradigm, a rigorous researcher should report precisely what was observed and what controls were and weren't included, rather than using loosely-scoped, more dramatic-sounding language ("the cells learned to play the game") that could overstate what the specific experimental evidence actually, rigorously supports.
+
+**Follow-ups:**
+- A colleague wants to describe your experimental results publicly as showing the cultured network "learned" the task, but you believe your specific experimental controls don't yet fully rule out simpler, non-learning explanations. How would you approach this disagreement about appropriate result framing?
+
+---
+
+### Q: How does the concept of "computation" in a cultured neural network relate to (and differ from) computation in a conventional artificial neural network, given that both are sometimes loosely described using similar "neural network" terminology? 🟡
+
+**Answer:**
+A conventional artificial neural network's "computation" is precisely defined and fully specified — a deterministic (or precisely stochastic, in a well-defined, controlled sense) mathematical function of its inputs, weights, and architecture, entirely specified by the researcher's chosen architecture and the numerically-stored learned weight values, and exactly reproducible given the same inputs and weights. A cultured biological neural network's "computation," by contrast, involves genuinely complex, only partially understood and only partially observable (per section 3's discussion of interfacing limitations) biological dynamics — including self-organized connectivity (section 2), biological noise and variability, metabolic and homeostatic processes operating alongside and interacting with activity-dependent plasticity, and generally far less precise experimental control and reproducibility than a conventional artificial system provides.
+
+This means using "computation" and "neural network" terminology for both systems, while capturing a genuine, meaningful conceptual analogy (both involve networks of interconnected units processing and transforming input signals into output signals, and both can exhibit activity-dependent adaptation), risks importing inappropriate intuitions or expectations from the well-understood, precisely-specified artificial neural network context into the biological context, where the underlying "computation" is considerably less precisely specified, less fully observable, and less well understood mechanistically — a rigorous researcher should be careful and explicit about which specific aspects of this artificial-neural-network analogy are genuinely appropriate and useful for a given research question, and which risk being misleading oversimplifications.
+
+**Follow-ups:**
+- What specific claims or framings about wetware computing systems do you think are most at risk of inappropriately importing artificial-neural-network intuitions in a way that could mislead either researchers or the public about what's actually been demonstrated?
