@@ -1,0 +1,17 @@
+.DS_Store
+*.log
+node_modules/
+.idea/
+.vscode/
+
+*.bk
+*.bak
+
+*.bk
+*.bak
+
+*.bk
+*.bak
+
+*.bk
+*.bak
